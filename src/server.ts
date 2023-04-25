@@ -14,7 +14,7 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount as any),
 });
 
-const port = 3002;
+const port = 3002 || process.env.PORT;
 
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
