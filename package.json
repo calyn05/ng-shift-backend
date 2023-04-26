@@ -2,7 +2,7 @@
   "name": "ng-shift-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
     "build": "ts-node src/server.ts",
     "start": "cd src && nodemon server.ts",
