@@ -1,9 +1,5 @@
 import express from "express";
 import cors from "cors";
-import mysql from "mysql2";
-import dotenv from "dotenv";
-import path from "path";
-dotenv.config({ path: path.join(__dirname, "../.env") });
 
 const admin = require("firebase-admin");
 const serviceAccount = require("../firebase-adminsdk.json");
@@ -15,19 +11,6 @@ admin.initializeApp({
 });
 
 const port = process.env.PORT || 3000;
-
-const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.USER_NAME,
-  password: process.env.PASSWORD,
-});
-
-db.connect((err) => {
-  if (err) {
-    throw err;
-  }
-  console.log("MySql Connected...");
-});
 
 app.use(
   cors({
