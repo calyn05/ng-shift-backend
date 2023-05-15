@@ -15,13 +15,12 @@ const port = process.env.PORT || 3000;
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3001"],
+    origin: true,
   })
 );
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
-  console.log(process.env.DB_HOST);
 });
 
 //get all users from firebase
