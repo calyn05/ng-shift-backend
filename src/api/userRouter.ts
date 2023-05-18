@@ -14,4 +14,6 @@ userRouter.put("/users/:id/email", userController.modifyEmail);
 
 userRouter.put("/users/:id/password", userController.modifyPassword);
 
+userRouter.delete("/users/:id", userController.deleteUser);
+
 export default userRouter;
