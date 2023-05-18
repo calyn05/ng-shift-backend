@@ -13,8 +13,6 @@ app.use(
   })
 );
 
-app.use(express.json());
-
 app.use("", userRouter);
 
 app.listen(port, () => {
