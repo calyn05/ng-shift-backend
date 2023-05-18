@@ -17,7 +17,7 @@ const getAllUsers = async (_req: any, res: { send: (arg0: any) => void }) => {
       res.send(listUsersResult.users);
     })
     .catch((error: any) => {
-      res.send(error);
+      res.send(JSON.stringify({ success: false, error }));
     });
 };
 
@@ -29,10 +29,10 @@ const getUser = async (
     .auth()
     .getUser(req.params.id)
     .then((userRecord: any) => {
-      res.send(userRecord);
+      res.send(userRecord.toJSON());
     })
     .catch((error: any) => {
-      res.send(error);
+      res.send(JSON.stringify({ success: false, error }));
     });
 };
 
@@ -46,10 +46,10 @@ const modifyEmail = async (
       email: req.body.email,
     })
     .then((userRecord: any) => {
-      res.send(userRecord);
+      res.send(userRecord.toJSON());
     })
     .catch((error: any) => {
-      res.send(error);
+      res.send(JSON.stringify({ success: false, error }));
     });
 };
 
@@ -63,10 +63,10 @@ const modifyPassword = async (
       password: req.body.password,
     })
     .then((userRecord: any) => {
-      res.send(userRecord);
+      res.send(userRecord.toJSON());
     })
     .catch((error: any) => {
-      res.send(error);
+      res.send(JSON.stringify({ success: false, error }));
     });
 };
 
@@ -78,10 +78,10 @@ const deleteUser = async (
     .auth()
     .deleteUser(req.params.id)
     .then(() => {
-      res.send("User deleted");
+      res.send(JSON.stringify({ success: true }));
     })
     .catch((error: any) => {
-      res.send(error);
+      res.send(JSON.stringify({ success: false, error }));
     });
 };
 
