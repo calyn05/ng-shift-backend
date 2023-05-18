@@ -29,7 +29,7 @@ const getUser = async (
     .auth()
     .getUser(req.params.id)
     .then((userRecord: any) => {
-      res.send(userRecord.toJSON());
+      res.send(userRecord);
     })
     .catch((error: any) => {
       res.send(error);
@@ -46,7 +46,7 @@ const modifyEmail = async (
       email: req.body.email,
     })
     .then((userRecord: any) => {
-      res.send(userRecord.toJSON());
+      res.send(userRecord);
     })
     .catch((error: any) => {
       res.send(error);
@@ -63,7 +63,7 @@ const modifyPassword = async (
       password: req.body.password,
     })
     .then((userRecord: any) => {
-      res.send(userRecord.toJSON());
+      res.send(userRecord);
     })
     .catch((error: any) => {
       res.send(error);
